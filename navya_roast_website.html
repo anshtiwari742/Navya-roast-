@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Navya™ — Personality Analysis</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;background:radial-gradient(circle at 20% 10%,#25184a,transparent 32%),radial-gradient(circle at 80% 30%,#35152e,transparent 30%),#07070b;color:#f5f5f5;overflow-x:hidden}
+.container{width:min(920px,92%);margin:auto}.hero{min-height:100vh;display:flex;align-items:center;text-align:center;padding:40px 0}
+.badge,.section-label{font-family:"Space Mono",monospace;color:#c4b5fd;font-size:11px;letter-spacing:1px}
+.badge{display:inline-block;padding:8px 14px;border:1px solid #ffffff22;background:#ffffff08;border-radius:999px;margin-bottom:25px}
+.hero h1{font-size:clamp(48px,13vw,90px);line-height:.95;letter-spacing:-4px;background:linear-gradient(120deg,#fff,#c4b5fd,#f9a8d4);-webkit-background-clip:text;color:transparent}
+.hero p{max-width:600px;margin:25px auto;color:#9ca3af;line-height:1.7}.warning{color:#fca5a5;font:12px "Space Mono";margin:18px 0}
+button{cursor:pointer;font-family:inherit}.primary{padding:14px 22px;border:0;border-radius:12px;color:#fff;font-weight:700;background:linear-gradient(135deg,#7c3aed,#db2777);box-shadow:0 10px 35px #7c3aed40}
+section{padding:75px 0}h2{font-size:clamp(28px,7vw,48px);margin:10px 0 12px;letter-spacing:-2px}.sub{color:#8f929b;margin-bottom:30px}
+.card,.terminal{background:#ffffff08;border:1px solid #ffffff17;border-radius:22px;padding:24px;backdrop-filter:blur(12px)}
+.stat{margin:17px 0}.stat-top{display:flex;justify-content:space-between;margin-bottom:8px;font-size:14px}.stat-top span:last-child{color:#f9a8d4;font-family:"Space Mono"}
+.bar,.scanbar{height:9px;background:#18181f;border-radius:20px;overflow:hidden}.fill,.scanfill{height:100%;width:0;background:linear-gradient(90deg,#8b5cf6,#ec4899);border-radius:20px;transition:1.3s}.legendary{color:#fbbf24!important}
+.terminal{padding:0;overflow:hidden;background:#050507}.termhead{padding:13px 16px;border-bottom:1px solid #222;color:#777;font:12px "Space Mono"}.termhead i{display:inline-block;width:8px;height:8px;background:#444;border-radius:50%;margin-right:5px}.termbody{padding:22px;font:13px/2 "Space Mono";min-height:260px}.green{color:#4ade80}.red{color:#f87171}.yellow{color:#facc15}
+.test{margin:15px 0;padding:18px;border-radius:15px;background:#111116;border:1px solid #25252d;line-height:1.7}
+.result{margin-top:25px;min-height:60px;line-height:1.7}
+.google{background:#fff;color:#202124;border-radius:20px;padding:25px}.google-logo{font-size:32px;font-weight:800;margin-bottom:20px}.searchbox{border:1px solid #dadce0;border-radius:30px;padding:13px 18px;margin-bottom:25px}.google-result{border-top:1px solid #eee;padding-top:20px}.google-result small{color:#5f6368}.google-result h3{color:#1a0dab;margin:7px 0}.google-result p{color:#4d5156;line-height:1.6}.didyou{margin-top:20px;color:#555}.didyou b{color:#1a0dab}
+.fact{text-align:center;min-height:210px;display:flex;flex-direction:column;justify-content:center}.factno{font:12px "Space Mono";color:#a78bfa;margin-bottom:15px}.facttext{font-size:clamp(20px,5vw,30px);font-weight:700;line-height:1.4}.level{margin-top:15px;color:#777;font-size:12px}.factbtn{margin-top:25px;padding:12px 18px;border-radius:10px;background:#18181f;border:1px solid #30303a;color:#fff}
+.final{text-align:center;padding-bottom:110px}.big{font-size:clamp(30px,8vw,55px);font-weight:800;margin:15px 0}.final-list{text-align:left;max-width:550px;margin:25px auto;line-height:2;color:#c4c4ca}.final-list strong{color:#f9a8d4}footer{text-align:center;padding:30px;border-top:1px solid #18181f;color:#555;font:11px "Space Mono"}.hidden{display:none}
+@media(max-width:600px){section{padding:60px 0}.hero h1{letter-spacing:-2px}.card{padding:20px}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="container">
+<div class="badge">⚠ PERSONALITY ANALYSIS SYSTEM v6.9</div>
+<h1>NAVYA™</h1>
+<p>An extremely unnecessary but scientifically questionable investigation into the personality, habits and suspicious levels of nautanki detected in one particular human.</p>
+<div class="warning">⚠ WARNING: Results may hurt feelings. Probably.</div>
+<button class="primary" onclick="start()">🔍 Begin Investigation</button>
+</div></header>
+
+<main id="main" class="hidden">
+<section><div class="container">
+<div class="section-label">01 / PERFORMANCE ANALYTICS</div><h2>Navya Performance Report™ 📊</h2><p class="sub">Based on highly confidential research conducted by absolutely nobody.</p>
+<div class="card">
+<div class="stat"><div class="stat-top"><span>🧠 Intelligence</span><span>12%</span></div><div class="bar"><div class="fill" data-w="12"></div></div></div>
+<div class="stat"><div class="stat-top"><span>🤡 Common Sense</span><span>3%</span></div><div class="bar"><div class="fill" data-w="3"></div></div></div>
+<div class="stat"><div class="stat-top"><span>🌀 Overthinking</span><span>97%</span></div><div class="bar"><div class="fill" data-w="97"></div></div></div>
+<div class="stat"><div class="stat-top"><span>🎭 Drama</span><span>146%</span></div><div class="bar"><div class="fill" data-w="100"></div></div></div>
+<div class="stat"><div class="stat-top"><span>💬 Reply Late Karne Ki Ability</span><span class="legendary">LEGENDARY</span></div><div class="bar"><div class="fill" data-w="100"></div></div></div>
+</div></div></section>
+
+<section><div class="container">
+<div class="section-label">02 / SYSTEM DIAGNOSTICS</div><h2>Navya.exe System Scan 💻</h2><p class="sub">Scanning personality files, decision-making modules and common sense drivers...</p>
+<div class="terminal"><div class="termhead">● ● ● &nbsp; NAVYA.exe — Diagnostic Console</div><div class="termbody"><div id="scantext">> Ready to scan Navya.exe...</div><div class="scanbar"><div id="scanfill" class="scanfill"></div></div><div id="scanresult"></div></div></div>
+<button class="primary" style="margin-top:20px" onclick="scan()">💻 Run Full System Scan</button>
+</div></section>
+
+<section><div class="container">
+<div class="section-label">03 / SCIENTIFIC RESEARCH</div><h2>Is Navya Actually Normal? 🧪</h2><p class="sub">A completely unbiased scientific investigation.</p>
+<div class="card">
+<div class="test">🧪 Test #1 — Does Navya overthink a simple message?<br><strong>Expected result: Yes.</strong></div>
+<div class="test">🧪 Test #2 — Does Navya say “kuch nahi” when something is definitely wrong?<br><strong>Expected result: Absolutely.</strong></div>
+<div class="test">🧪 Test #3 — Can Navya reply within a reasonable amount of time?<br><strong>Expected result: Laboratory equipment unavailable.</strong></div>
+<button class="primary" onclick="science()">🧬 Run Scientific Analysis</button><div id="scienceResult" class="result"></div>
+</div></div></section>
+
+<section><div class="container">
+<div class="section-label">04 / INTERNET INVESTIGATION</div><h2>Fake Google Search 🔎</h2><p class="sub">Searching the internet for answers that nobody asked for.</p>
+<div class="google"><div class="google-logo"><span style="color:#4285f4">G</span><span style="color:#ea4335">o</span><span style="color:#fbbc05">o</span><span style="color:#4285f4">g</span><span style="color:#34a853">l</span><span style="color:#ea4335">e</span></div>
+<div class="searchbox">🔍 Navya</div><div class="google-result"><small>About 69,420,420 results</small><h3>Navya — Wikipedia</h3><p>Navya is a mysterious internet personality known for overthinking, delayed replies and occasional outbreaks of unnecessary drama.</p><div class="didyou">Did you mean: <b>NAUTANKI?</b> 😂</div></div></div>
+</div></section>
+
+<section><div class="container">
+<div class="section-label">05 / PERSONALITY APPRECIATION</div><h2>5 Beautiful Facts About Navya ❤️</h2><p class="sub">It starts wholesome. Trust the process.</p>
+<div class="card fact"><div id="factno" class="factno">FACT 1 / 5</div><div id="facttext" class="facttext">Navya has a genuinely memorable personality. ❤️</div><div id="level" class="level">Roast Level: 0%</div><button class="factbtn" onclick="fact()">❤️ Reveal Next Fact</button></div>
+</div></section>
+
+<section class="final"><div class="container">
+<div class="section-label">06 / FINAL VERDICT</div><h2>Final Navya Diagnosis 💀</h2>
+<div class="card"><div class="big">100% NAVYA</div><div class="final-list">
+<div>🧠 Intelligence: <strong>Under maintenance</strong></div><div>🌀 Overthinking: <strong>Unlimited Plan</strong></div><div>🎭 Drama: <strong>Premium Subscription</strong></div><div>💬 Reply Speed: <strong>Coming soon™</strong></div><div>🤡 Nautanki Level: <strong>Government Certified</strong></div>
+</div><p style="color:#9ca3af;line-height:1.7">Treatment is currently unavailable.<br>Doctors have given up.<br>Friends have adapted.</p>
+<button class="primary" style="margin-top:25px" onclick="note()">🧾 View Confidential Note</button><div id="noteText" style="margin-top:25px;color:#f9a8d4;font-weight:700"></div>
+</div></div></section>
+</main>
+<footer>NAVYA™ PERSONALITY ANALYSIS SYSTEM · 2026<br>No Navya was scientifically harmed during this investigation.</footer>
+
+<script>
+function start(){document.getElementById('main').classList.remove('hidden');setTimeout(()=>{document.querySelectorAll('.fill').forEach(x=>x.style.width=x.dataset.w+'%')},500);setTimeout(()=>scrollTo({top:innerHeight,behavior:'smooth'}),150)}
+let busy=false;
+function scan(){if(busy)return;busy=true;let p=0,f=document.getElementById('scanfill'),t=document.getElementById('scantext'),r=document.getElementById('scanresult');r.innerHTML='';let iv=setInterval(()=>{p+=Math.floor(Math.random()*7)+2;if(p>=100){p=100;clearInterval(iv);t.innerHTML='> Scan complete. <span class="green">100%</span>';setTimeout(()=>{r.innerHTML='<div class="red">⚠ CRITICAL ISSUES DETECTED</div><div class="yellow">[!] Common sense.dll — Missing<br>[!] Patience.sys — Corrupted<br>[!] ReplySpeed.exe — Not responding<br>[!] DramaEngine — Running at 146%<br>[!] OverthinkingCore — Cannot be stopped</div><br><div class="green">✓ Personality: UNIQUE<br>✓ Nautanki: EXTREME<br>✓ Friend Material: APPROVED ❤️</div>';busy=false},400)}else{f.style.width=p+'%';t.textContent='> Scanning Navya.exe... '+p+'%'}},150)}
+let sr=0;function science(){let a=['🧪 Analysis started... Comparing Navya behavior with known human patterns...','📊 87% of normal human behavior detected. Remaining 13% classified as “mysterious”.','🚨 Update: the mysterious 13% is actually 97% overthinking.','🔬 Further testing reveals: Navya is technically human, but with experimental software installed.','💀 FINAL VERDICT: Normal? ❌ Interesting? ✅ Nautanki? ABSOLUTELY.'];document.getElementById('scienceResult').innerHTML=a[Math.min(sr++,a.length-1)];if(sr>=a.length)sr=0}
+let fi=0;let facts=[['Navya has a genuinely memorable personality. ❤️','Roast Level: 0%'],['Navya somehow makes even simple conversations interesting. ✨','Roast Level: 20%'],['Navya’s ability to overthink one sentence for 47 business days is impressive. 🧠','Roast Level: 45%'],['Navya can turn a completely normal situation into a full Netflix series. 🎬','Roast Level: 75%'],['Beautiful fact: Navya is unique. Unfortunately, the warranty expired years ago. 💀','Roast Level: 100%']];
+function fact(){fi=(fi+1)%facts.length;document.getElementById('factno').textContent='FACT '+(fi+1)+' / 5';document.getElementById('facttext').textContent=facts[fi][0];document.getElementById('level').textContent=facts[fi][1]}
+function note(){document.getElementById('noteText').textContent='📩 CONFIDENTIAL NOTE: Navya, agar tum ye website dekh rahi ho... haan, ye sab tumhare liye hi banayi gayi thi. 😂❤️'}
+</script>
+</body>
+</html>
